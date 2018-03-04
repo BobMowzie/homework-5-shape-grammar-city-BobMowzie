@@ -18,7 +18,7 @@ import LSystemMesh from './geometry/LSystemMesh';
 const controls = {
   'Load Scene': loadScene, // A function pointer, essentially
   'Generate': generate,
-  iterations: 0,
+  iterations: 10,
 };
 
 let lsystemMesh: LSystemMesh;
@@ -29,6 +29,7 @@ function loadScene() {
   frame = 0;
   lsystemMesh = new LSystemMesh(vec3.fromValues(0, 0, 0));
   lsystemMesh.create();
+  generate();
 }
 
 function generate() {
